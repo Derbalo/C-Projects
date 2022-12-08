@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -44,7 +44,7 @@ namespace Auto
 
     }
 
-    
+
     class Bicycle : Vehicle
     {
         //оригинальное поле для байков
@@ -183,7 +183,7 @@ namespace Auto
         {
             foreach (Lorry lorry in lorrys)
             {
-                Console.WriteLine("Цена: {0}, Максимальная скорость: {1}, Год: {2}, Максимальная грузоподьемность: {3};", lorry.Price, lorry.Maxspeed, lorry.Year, lorry.MaxCapacity);
+                Console.WriteLine("Цена: {0}$, Максимальная скорость: {1} км/ч, Год: {2} г., Максимальная грузоподьемность: {3} кг;", lorry.Price, lorry.Maxspeed, lorry.Year, lorry.MaxCapacity);
             }
         }
 
@@ -191,7 +191,7 @@ namespace Auto
         {
             foreach (Car car in cars)
             {
-                Console.WriteLine("Цена: {0}, Максимальная скорость: {1}, Год: {2}, Мощьность: {3};", car.Price, car.Maxspeed, car.Year, car.Power);
+                Console.WriteLine("Цена: {0}$, Максимальная скорость: {1} км/ч, Год: {2} г., Мощьность: {3} л.с;", car.Price, car.Maxspeed, car.Year, car.Power);
             }
         }
 
@@ -199,7 +199,7 @@ namespace Auto
         {
             foreach (Bicycle bicycle in bicycles)
             {
-                Console.WriteLine("Цена: {0}, Максимальная скорость: {1}, Год: {2}, Максимум пасажиров: {3};", bicycle.Price, bicycle.Maxspeed, bicycle.Year, bicycle.MaxPassengers);
+                Console.WriteLine("Цена: {0}$, Максимальная скорость: {1} км/ч, Год: {2} г., Максимум пасажиров: {3} чел;", bicycle.Price, bicycle.Maxspeed, bicycle.Year, bicycle.MaxPassengers);
             }
         }
 
