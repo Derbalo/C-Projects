@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace Csh_console_tasks {
+    struct STUDENT {
+        public string name;         //Фамилия и инициалы 
+        public string group;        // Номер группы
+        public int[] progress;      // Успеваемость (массив из 5 элементов)
+    }
+    class Zadanie {
+        static void Main(string[] args) {
+ 
+            STUDENT[] students = new STUDENT[10];
+            char[] progress = new char[5];
+            bool flag = true;
+            for (int i = 0; i < students.Length; i++) {
+                Console.Write("Фамилие И.О: ");
+                students[i].name = Console.ReadLine();
+                Console.Write("Номер группы: ");
+                students[i].group = Console.ReadLine();
+                students[i].progress = new int[5];
+                Console.Write("Успеваеммость (введите 5 оценок подряд, например 55545): ");
+                progress = Console.ReadLine().ToArray();
+                for (int j = 0; j < progress.Length; j++) {
+                    students[i].progress[j] = progress[j] - '0';
+                }
+            }
+ 
+            for (int i = 0; i < students.Length; i++) {
+                if (Enumerable.Min(students[i].progress) != 1 &&
+                    Enumerable.Min(students[i].progress) != 2 &&
+                    Enumerable.Min(students[i].progress) != 3) {
+                    Console.WriteLine("*********"+i+"**********");
+                    Console.Write("Фамилие И.О: ");
+                    Console.WriteLine(students[i].name);
+                    Console.Write("Номер группы: ");
+                    Console.WriteLine(students[i].group);
+                    Console.WriteLine("**********************");
+ 
+                    flag = false;
+                }
+            }
+            if (flag) {
+                Console.WriteLine("Нет ни одного студента с оценками 4,5");
+            }
+ 
+            Console.ReadKey();
+ 
+        }
+    }
+}
